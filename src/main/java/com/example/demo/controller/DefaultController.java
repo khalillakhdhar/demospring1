@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.model.User;
+
 @RestController
 public class DefaultController {
 @GetMapping("hello") // en accédant à localhost:8080/hello on affiche le résultat de la f
@@ -23,4 +25,12 @@ public String restfull()
 {
 return "i am restfull controller";	
 }
+@GetMapping("user")
+public String showUser()
+{
+User u=new User("teste", "test", 20);
+return u.toString();
+}
+
+
 }
